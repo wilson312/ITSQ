@@ -32,15 +32,18 @@ public class EnemyMelee : MonoBehaviour {
         GameObject[] playerUnits = GameObject.FindGameObjectsWithTag("PlayerUnit");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-        foreach(GameObject playerUnit in playerUnits)
-        {
-            float distanceToUnit = Vector3.Distance(transform.position, playerUnit.transform.position);
-            if (distanceToUnit <= shortestDistance)
-            {
-                shortestDistance = distanceToUnit;
-                nearestEnemy = playerUnit;
-            }
-        }
+	if(target == null)
+	{
+		foreach(GameObject playerUnit in playerUnits)
+		{
+		    float distanceToUnit = Vector3.Distance(transform.position, playerUnit.transform.position);
+		    if (distanceToUnit <= shortestDistance)
+		    {
+			shortestDistance = distanceToUnit;
+			nearestEnemy = playerUnit;
+		    }
+		}
+	}
 
         if (nearestEnemy != null && shortestDistance <= range)
         {
