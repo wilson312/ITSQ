@@ -9,6 +9,7 @@ public class MazeNavigation : MonoBehaviour {
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        goal = GameObject.Find("Goal").GetComponent<Transform>();
     }
     void Update()
     {

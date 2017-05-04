@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Selection : MonoBehaviour {
-    public GameObject cam;
+public class HealthLookAt : MonoBehaviour {
+    [SerializeField]
+    GameObject camera;
 	// Use this for initialization
 	void Start () {
-		
+        camera = GameObject.Find("Camera");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.LookAt(cam.transform.position);
+        transform.LookAt(camera.transform);
 	}
 }
